@@ -16,6 +16,7 @@ public class Main {
     public static boolean isLengthValid(String password) {
         return password.length() >= 8;
     }
+
     public static boolean containsDigit(String password) {
         for (int i = 0; i < password.length(); i++) {
             char ch = password.charAt(i); // Hol dir das Zeichen an der Position i // Prüfe, ob das Zeichen eine Ziffer ist
@@ -23,12 +24,23 @@ public class Main {
                 return true;  // Wenn eine Ziffer gefunden wurde, gib true zurück
             }
         }
-            return false;
-        }
-
-    public static boolean containsUpperAndLowerCase(String password) {
         return false;
     }
+
+    public static boolean containsUpperAndLowerCase(String password) {
+        boolean hasUpper = false;
+        boolean hasLower = false;
+
+        for (char ch : password.toCharArray()) {
+            if (Character.isUpperCase(ch)) hasUpper = true;  // Prüft auf Großbuchstaben
+            if (Character.isLowerCase(ch)) hasLower = true;  // Prüft auf Kleinbuchstaben
+
+            if (hasUpper && hasLower) return true; // Falls beide gefunden wurden, sofort beenden
+        }
+
+        return false; // Falls nicht beides gefunden wurde, Rückgabe ist false
+    }
+
     public static boolean isCommonPassword(String password) {
         return false;
     }
@@ -68,5 +80,13 @@ public class Main {
 ein Char-Array umwandelt. Ein String besteht aus Zeichen, und mit toCharArray()
 kannst du alle Zeichen des Strings in einem Array vom Typ char speichern. Jedes Element
 dieses Arrays ist ein einzelnes Zeichen des Strings.
+ */
+
+/*password.toCharArray()	Wandelt den String in ein char[]-Array um
+for (char ch : password.toCharArray())	Läuft durch jedes Zeichen des Passworts
+ch	Repräsentiert das aktuelle Zeichen in der Schleife
+Character.isDigit(ch)	Prüft, ob ch eine Ziffer ist
+Character.isUpperCase(ch)	Prüft, ob ch ein Großbuchstabe ist
+Character.isLowerCase(ch)	Prüft, ob ch ein Kleinbuchstabe ist
  */
 

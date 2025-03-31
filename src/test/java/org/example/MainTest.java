@@ -64,4 +64,51 @@ class MainTest {
         assertFalse(result, "Das Passwort sollte ziffern enthalten");
     }
 
-}
+    @Test
+    void givenPasswordWithUpperAndLowerCase_whenContainsUpperAndLowerCase_thenReturnsTrue() {
+        // GIVEN
+        String password = "Passwort123";
+
+        // WHEN
+        boolean result = Main.containsUpperAndLowerCase(password);
+
+        // THEN
+        assertTrue(result);
+    }
+    @Test
+    void givenPasswordWithOnlyUpperCase_whenContainsUpperAndLowerCase_thenReturnsTrue() {
+        // GIVEN
+        String password = "PASSWORT123";
+
+        // WHEN
+        boolean result = Main.containsUpperAndLowerCase(password);
+
+        // THEN
+        assertFalse(result);
+    }
+
+    @Test
+    void givenPasswordWithOnlyUpperCase_whenContainsUpperAndLowerCase_thenReturnsFalse() {
+        // GIVEN
+        String password = "passwort123";
+
+        // WHEN
+        boolean result = Main.containsUpperAndLowerCase(password);
+
+        // THEN
+        assertFalse(result);
+    }
+
+    @Test
+    void givenPasswordWithNoLetters_whenContainsUpperAndLowerCase_thenReturnsFalse() {
+        // GIVEN
+        String password = "12345678";
+
+        // WHEN
+        boolean result = Main.containsUpperAndLowerCase(password);
+
+        // THEN
+        assertFalse(result);
+    }
+
+    }
