@@ -42,7 +42,7 @@ public class Main {
     }
 
     public static boolean isCommonPassword(String password) {
-        String[] commonPasswords = {"123456", "password", "Passwort1", "passWORT", "Abcd1234"};
+        String[] commonPasswords = {"123456", "password", "Passwort1", "passWORT", "Abcd12345"};
         for (String common : commonPasswords) {
             if (common.equals(password)) {
                 return true;

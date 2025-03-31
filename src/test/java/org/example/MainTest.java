@@ -111,6 +111,31 @@ class MainTest {
         assertFalse(result);
     }
 
+    @Test
+    void givenCommonPassword_whenChecked_thenReturnsTrue() {
+        // GIVEN: Ein schwaches Passwort aus der Liste
+        String password = "Passwort1";
+
+        // WHEN: Die Methode wird aufgerufen
+        boolean result = Main.isCommonPassword(password);
+
+        // THEN: Das Passwort sollte als häufig verwendet erkannt werden
+        assertTrue(result);
+    }
+
+    @Test
+    void givenUncommonPassword_whenChecked_thenReturnsFalse() {
+        // GIVEN: Ein sicheres, nicht häufig verwendetes Passwort
+        String password = "MeinSicheresPasswort2024!";
+
+        // WHEN: Die Methode wird aufgerufen
+        boolean result = Main.isCommonPassword(password);
+
+        // THEN: Das Passwort sollte NICHT als häufig erkannt werden
+        assertFalse(result);
+    }
+
+
 
 
 }
