@@ -42,6 +42,12 @@ public class Main {
     }
 
     public static boolean isCommonPassword(String password) {
+        String[] commonPasswords = {"123456", "password", "Passwort1", "passWORT", "Abcd1234"};
+        for (String common : commonPasswords) {
+            if (common.equals(password)) {
+                return true;
+            }
+        }
         return false;
     }
 
@@ -89,4 +95,7 @@ Character.isDigit(ch)	Prüft, ob ch eine Ziffer ist
 Character.isUpperCase(ch)	Prüft, ob ch ein Großbuchstabe ist
 Character.isLowerCase(ch)	Prüft, ob ch ein Kleinbuchstabe ist
  */
+
+/*equals() wird verwendet, um den Inhalt von Strings zu vergleichen.
+== prüft nur, ob zwei Variablen auf dasselbe Objekt im Speicher verweisen. */
 
