@@ -17,8 +17,14 @@ public class Main {
         return password.length() >= 8;
     }
     public static boolean containsDigit(String password) {
-        return false;
-    }
+        for (int i = 0; i < password.length(); i++) {
+            char ch = password.charAt(i); // Hol dir das Zeichen an der Position i // Prüfe, ob das Zeichen eine Ziffer ist
+            if (Character.isDigit(ch)) {
+                return true;  // Wenn eine Ziffer gefunden wurde, gib true zurück
+            }
+        }
+            return false;
+        }
 
     public static boolean containsUpperAndLowerCase(String password) {
         return false;
@@ -57,3 +63,10 @@ public class Main {
 
 // Prüft, ob das Passwort in einer Liste häufig verwendeter Passwörter vorkommt
 // public static boolean isCommonPassword(String password);
+
+/*password.toCharArray(): Dies ist eine Methode der Klasse String, die einen String in
+ein Char-Array umwandelt. Ein String besteht aus Zeichen, und mit toCharArray()
+kannst du alle Zeichen des Strings in einem Array vom Typ char speichern. Jedes Element
+dieses Arrays ist ein einzelnes Zeichen des Strings.
+ */
+

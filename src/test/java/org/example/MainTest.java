@@ -40,4 +40,28 @@ class MainTest {
         assertFalse(result, "Das Passwort sollte weniger 8 Zeichen lang sein.");
     }
 
+    @Test
+    void givenPasswordWithDigits_whenContainsDigit_thenReturnsTrue() {
+        // GIVEN
+        String password = "Passwort123";
+
+        // WHEN
+        boolean result = Main.containsDigit(password);
+
+        // THEN
+        assertTrue(result, "Das Passwort enthält ziffern");
+
+    }
+    @Test
+    void givenPasswordWithoutDigits_whenContainsDigit_thenReturnsTrue() {
+        // GIVEN
+        String password = "Passwort";
+
+        // WHEN
+        boolean result = Main.containsDigit(password);
+
+        // THEN
+        assertFalse(result, "Das Passwort sollte ziffern enthalten");
+    }
+
 }
