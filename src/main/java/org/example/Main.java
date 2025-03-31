@@ -14,7 +14,7 @@ public class Main {
 
 
     public static boolean isLengthValid(String password) {
-        return false;
+        return password.length() >= 8;
     }
     public static boolean containsDigit(String password) {
         return false;
